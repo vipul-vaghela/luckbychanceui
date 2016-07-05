@@ -76,7 +76,16 @@ angular.module('plc', ['ionic', 'plc.controllers'])
         controller: 'loginController'
       }
     }
+  })
+  .state('app.createaccount', {
+    url: '/createaccount',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/createaccount.html',
+        controller: 'createAccountController'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/login');
 });
