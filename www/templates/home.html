@@ -1,17 +1,12 @@
 <ion-view view-title="Home">
-    <ion-content class="padding" ng-init="startTick()">
-        <button ng-click="addItems()">Add Items</button>
-        <a id="a" class="item item-avatar" href="#">
-            <img src="venkman.jpg">
-            <h2>{{randomUser}}</h2>
-            <p>Back off, man. I'm a scientist.</p>
-        </a>
-        <!--        <div class="list" ng-repeat="name in userNames" ng-animate="{enter:'insert-enter'}"
-                     style="-webkit-transition-delay:{{$index * 500}}ms" >
-                    {{setName(name)}}
-                    {{name}}
-                    {{randomUser=name}}
-                </div>
-        -->
+    <ion-content class="padding">
+        <div class="text-center" ng-if="randomUser">
+            <a id="a" class="item item-avatar" href="#">
+                <img ng-src="img/{{randomUser.id}}.jpg">
+                <h2>{{randomUser.name}}</h2>
+            </a>
+        </div>
+        <button class="button button-block button-calm" ng-if="isStart" ng-click="startDraw()">Start Draw</button>
+        <button class="button button-block button-calm" ng-if="!isStart" ng-click="startDraw()">Stop Draw</button>
     </ion-content>
 </ion-view>
