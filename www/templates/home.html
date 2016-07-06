@@ -1,5 +1,17 @@
 <ion-view view-title="Home">
-    <ion-content class="padding">
-        This is Home page
+    <ion-content class="padding" ng-init="startTick()">
+        <button ng-click="addItems()">Add Items</button>
+        <a id="a" class="item item-avatar" href="#">
+            <img src="venkman.jpg">
+            <h2>{{randomUser}}</h2>
+            <p>Back off, man. I'm a scientist.</p>
+        </a>
+        <!--        <div class="list" ng-repeat="name in userNames" ng-animate="{enter:'insert-enter'}"
+                     style="-webkit-transition-delay:{{$index * 500}}ms" >
+                    {{setName(name)}}
+                    {{name}}
+                    {{randomUser=name}}
+                </div>
+        -->
     </ion-content>
 </ion-view>
