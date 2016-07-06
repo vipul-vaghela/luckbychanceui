@@ -1,13 +1,47 @@
 <ion-view view-title="Login" name="login-view">
-  <ion-content class="padding">
-      <div class="list list-inset">
-          <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="data.username">
-          </label>
-          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
-          </label>
-      </div>
-      <button class="button button-block button-calm" ng-click="login()">Login</button>
-  </ion-content>
+    <ion-content class="padding">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <!--<span class="input-label">Username</span>-->
+                <input type="text" placeholder="Username" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <!--<span class="input-label">Password</span>-->
+                <input type="password" placeholder="Password"  ng-model="data.password">
+            </label>
+
+        </div>
+        <!--        <div class="col col-center text-left no-padding">
+                    <ul class="list ">
+                        <li class="item item-checkbox fb-checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" checked="" ng-model="rememberId">
+                            </label>
+                            Remember Me
+                        </li></ul>
+                </div>-->
+
+
+        </div>
+        <button class="button button-block button-calm" ng-click="login()">Login</button>
+        <div class="row">
+            <div class="col col-75 text-left">
+                <ul class="list ">
+                    <li class="item item-checkbox">
+                        <label class="checkbox">
+                            <input type="checkbox" checked="" ng-model="rememberId"> 
+                        </label> Remember Me
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="col text-right">
+                <a href="#/app/createaccount" class="forgot-password">Create Account</a>
+            </div>
+            <div class="col text-right">
+                <a href="#/reset-password" class="forgot-password">Forgot Password?</a>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
