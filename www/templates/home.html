@@ -1,10 +1,13 @@
 <ion-view view-title="Home">
     <ion-content class="padding">
         <div class="text-center" ng-if="randomUser">
-            <a id="a" class="item item-avatar" href="#">
+            <a class="item item-avatar" href="">
                 <img ng-src="img/{{randomUser.id}}.jpg">
                 <h2>{{randomUser.name}}</h2>
             </a>
+        </div>
+        <div class="text-center" ng-if="winnerMessage">
+            <h4 class="button-positive">{{winnerMessage}}</h4>
         </div>
         <!--        <div class="bar bar-footer">
                     <button class="button button-block button-calm" ng-if="!isDrawInProgress" ng-click="startDraw()">Start Draw</button>
