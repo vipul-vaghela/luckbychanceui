@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('plc.directives', []);
-angular.module('plc', ['ionic', 'plc.controllers', 'plc.directives'])
+angular.module('plc', ['ionic', 'plc.controllers', 'plc.directives','ngMessages'])
 
         .run(function ($ionicPlatform) {
             $ionicPlatform.ready(function () {

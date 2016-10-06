@@ -1,40 +1,61 @@
 <ion-view view-title="Create Account">
-  <ion-content class="padding">
-      <div class="list list-inset">
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">First Name</span>
-              <input type="text" placeholder="First Name"  ng-model="a">
-          </label>
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Last Name</span>
-              <input type="text" placeholder="Last Name" ng-model="b">
-          </label>
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Email</span>
-              <input type="text" placeholder="Email"  ng-model="c">
-          </label>
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Mobile No</span>
-              <input type="text" placeholder="Mobile No" ng-model="d">
-          </label>
-<!--          <label class="item item-input item-stacked-label">
-              <span class="input-label">Picture</span>
-              <input type="file" placeholder="Picture">
-          </label>-->
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Password</span>
-              <input type="text" placeholder="Password">
-          </label>
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Confirm Password</span>
-              <input type="text" placeholder="Confirm Password">
-          </label>
-<!--          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
-          </label>-->
-      </div>
-      <button class="button button-block button-calm" ng-click="">Create Account</button>
-  </ion-content>
+    <ion-content class="padding">
+        <form name="createAccountForm">
+            <div class="list list-inset">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">First Name</span>
+                    <input autofocus type="text" name="userFirstName" placeholder="Enter First Name"  ng-model="a" required />
+                    <div class="errorBlock" ng-messages="createAccountForm.userFirstName.$error" ng-if="(createAccountForm.userFirstName.$dirty ||  submitted) && createAccountForm.userFirstName.$error.required">
+                        <div ng-message="required">First Name is required</div>
+                    </div>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Last Name</span>
+                    <input type="text" name="lastName" placeholder="Enter Last Name" ng-model="b" required />
+                    <div class="errorBlock" ng-messages="createAccountForm.lastName.$error" ng-if="(createAccountForm.lastName.$dirty ||  submitted ) && createAccountForm.lastName.$error.required">
+                        <div ng-message="required">Last Name is required</div>
+                    </div>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="email"  placeholder="Enter Email" name="email"  ng-model="c" />
+                    <div class="errorBlock" ng-messages="createAccountForm.email.$error" ng-if="createAccountForm.email.$dirty">
+                        <div ng-message="email">Your email address is invalid</div>
+                    </div>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Mobile No</span>
+                    <input type="text" name="userPhoneNumber" placeholder="Enter Mobile Number" ng-model="d" required="true" ng-pattern="/^[0-9]{10,10}$/">
+                    <div class="errorBlock" ng-messages="createAccountForm.userPhoneNumber.$error" ng-if="(createAccountForm.userPhoneNumber.$dirty ||  submitted ) && createAccountForm.userPhoneNumber.$error.required">
+                        <div ng-message="required">Mobile Number is required</div>
+                        <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+                    </div>
+                </label>
+                <!--          <label class="item item-input item-stacked-label">
+                              <span class="input-label">Picture</span>
+                              <input type="file" placeholder="Picture">
+                          </label>-->
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Password</span>
+                    <input type="text" placeholder="Enter Password" name="pass" ng-model="p" required />
+                    <div class="errorBlock" ng-messages="createAccountForm.pass.$error" ng-if="(createAccountForm.pass.$dirty ||  submitted ) && createAccountForm.pass.$error.required">
+                        <div ng-message="required">Password is required</div>
+                    </div>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Confirm Password</span>
+                    <input type="text" name="confirmPass" placeholder="Enter Confirm Password" ng-model="cp" required />
+                    <div class="errorBlock" ng-messages="createAccountForm.confirmPass.$error" ng-if="(createAccountForm.confirmPass.$dirty ||  submitted ) && createAccountForm.confirmPass.$error.required">
+                        <div ng-message="required">Confirm Password is required</div>
+                    </div>
+                </label>
+                <!--          <label class="item item-input">
+                              <input type="password" placeholder="Password" ng-model="data.password">
+                          </label>-->
+            </div>
+        </form>
+        <button class="button button-block button-calm" ng-click="createUserAccount()">Create Account</button>
+    </ion-content>
 </ion-view>
 <!--
 <form ua-signup>

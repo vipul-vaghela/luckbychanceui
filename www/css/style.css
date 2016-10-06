@@ -1,1 +1,6 @@
-/* Empty. Add your own CSS if you like */
+.errorBlock{
+    display:inline-block;
+    vertical-align:top;
+    color: red;
+    margin-top: 5px;
+}
