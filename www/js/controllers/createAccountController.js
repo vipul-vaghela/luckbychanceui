@@ -3,9 +3,16 @@
 var createAccountController = function ($scope) {
 
     console.log("This is createAccountController controller...");
+    $scope.user={
+        firstName:"",
+        lastName:"",
+        email:"",
+        mobileNumber:"",
+        password:"",
+        confirmPassword:""
+    };
     $scope.createUserAccount=function(){
-        console.log("called");
-        $scope.submitted=true;
+       $scope.submitted=true;
         
     };
     

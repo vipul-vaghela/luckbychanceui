@@ -13,5 +13,9 @@
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-html2js": "^0.3.4"
-  }
+  },
+  "cordovaPlugins": [],
+  "cordovaPlatforms": [
+    "android"
+  ]
 }
