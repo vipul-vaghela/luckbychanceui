@@ -1,6 +1,6 @@
 
 
-var homeController = function ($scope, $timeout, $interval) {
+var homeController = function ($scope, $rootScope,$ionicNavBarDelegate, $timeout, $interval) {
     $scope.userNames = [
         {id: 1, name: "amit"},
         {id: 2, name: "dk"},
@@ -11,11 +11,19 @@ var homeController = function ($scope, $timeout, $interval) {
         {id: 7, name: "ssss"}
 
     ];
+   
     $scope.randomUser = {};
     var counter = 0;
     var stop;
     var delay = 1000;
     $scope.isStart = true;
+
+
+    $scope.closeAlert = function (index) {
+        console.log($rootScope.alerts);
+        $rootScope.alerts.splice(index, 1);
+    };
+
     $scope.setName = function (name) {
         $scope.randomUser = $scope.userNames[counter];
         $scope.$apply(function () {
@@ -104,4 +112,4 @@ var homeController = function ($scope, $timeout, $interval) {
      var interval = setInterval(myFunction, counter1);*/
 };
 angular.module('plc.controllers')
-        .controller('homeController', ['$scope', '$timeout', '$interval', homeController]);
+        .controller('homeController', ['$scope', '$rootScope','$ionicNavBarDelegate', '$timeout', '$interval', homeController]);

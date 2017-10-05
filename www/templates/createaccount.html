@@ -5,28 +5,37 @@
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">First Name</span>
                     <input autofocus type="text"  name="userFirstName" placeholder="Enter First Name"  ng-model="user.firstName" required />
-                    <div class="errorBlock" ng-messages="createAccountForm.userFirstName.$error" ng-if="(createAccountForm.userFirstName.$dirty || submitted) && createAccountForm.userFirstName.$error.required">
+<!--                    <div class="errorBlock" ng-messages="createAccountForm.userFirstName.$error" ng-if="(createAccountForm.userFirstName.$dirty || submitted) && createAccountForm.userFirstName.$error.required">
                         <div ng-message="required">First Name is required</div>
-                    </div>
+                    </div>-->
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Last Name</span>
                     <input type="text" name="lastName" placeholder="Enter Last Name" ng-model="user.lastName" required />
-                    <div class="errorBlock" ng-messages="createAccountForm.lastName.$error" ng-if="(createAccountForm.lastName.$dirty || submitted) && createAccountForm.lastName.$error.required">
+<!--                    <div class="errorBlock" ng-messages="createAccountForm.lastName.$error" ng-if="(createAccountForm.lastName.$dirty || submitted) && createAccountForm.lastName.$error.required">
                         <div ng-message="required">Last Name is required</div>
-                    </div>
+                    </div>-->
                 </label>
                 <label class="item item-input item-stacked-label">
+                    <span class="input-label">City</span>
+                   
+                    <!--<input type="text" name="cityName" placeholder="Enter City Name" ng-model="user.cityName" required />-->
+                    <input type="text" gm-places-autocomplete name="cityName" placeholder="Enter City Name" ng-model="user.cityName"/>
+<!--                    <div class="errorBlock" ng-messages="createAccountForm.cityName.$error" ng-if="(createAccountForm.cityName.$dirty || submitted) && createAccountForm.cityName.$error.required">
+                        <div ng-message="required">City Name is required</div>
+                    </div>-->
+                </label>
+<!--                <label class="item item-input item-stacked-label">
                     <span class="input-label">Email</span>
                     <input type="email"  placeholder="Enter Email" name="email"  ng-model="user.email" />
                     <div class="errorBlock" ng-messages="createAccountForm.email.$error" ng-if="createAccountForm.email.$dirty">
                         <div ng-message="email">Your email address is invalid</div>
                     </div>
-                </label>
+                </label>-->
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Mobile No</span>
                     <input type="text" name="userPhoneNumber" placeholder="Enter Mobile Number" ng-model="user.mobileNumber" required="true" ng-pattern="/^[0-9]{10,10}$/">
-                    <div class="errorBlock" ng-messages="createAccountForm.userPhoneNumber.$error" ng-if="(createAccountForm.userPhoneNumber.$dirty || submitted) && createAccountForm.userPhoneNumber.$error.required">
+                    <div class="errorBlock" ng-messages="createAccountForm.userPhoneNumber.$error" ng-if="(createAccountForm.userPhoneNumber.$dirty || submitted) && createAccountForm.userPhoneNumber.$error.required || createAccountForm.userPhoneNumber.$error.pattern">
                         <div ng-message="required">Mobile Number is required</div>
                         <div ng-message="pattern">Must be a valid 10 digit phone number</div>
                     </div>
@@ -36,7 +45,7 @@
                    
                     <input type="file" placeholder="Picture" accept="image/*;capture=camera">
                 </label>-->
-                <label class="item item-input item-stacked-label">
+<!--                <label class="item item-input item-stacked-label">
                     <span class="input-label">Password</span>
                     <input type="password" placeholder="Enter Password" name="pass" ng-model="user.password" required />
                     <div class="errorBlock" ng-messages="createAccountForm.pass.$error" ng-if="(createAccountForm.pass.$dirty || submitted) && createAccountForm.pass.$error.required">
@@ -50,13 +59,14 @@
                         <div ng-message="required">Confirm Password is required</div>
                         <div ng-message="compareTo">Must match the previous entry</div>
                     </div>
-                </label>
+                </label>-->
                 <!--          <label class="item item-input">
                               <input type="password" placeholder="Password" ng-model="data.password">
                           </label>-->
             </div>
+            <button class="button button-block button-calm" ng-click="createUserAccount(createAccountForm)">Create Account</button>
         </form>
-        <button class="button button-block button-calm" ng-click="createUserAccount()">Create Account</button>
+        
     </ion-content>
 </ion-view>
 <!--

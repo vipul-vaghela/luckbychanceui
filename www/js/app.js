@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('plc.directives', []);
-angular.module('plc', ['ionic', 'plc.controllers', 'plc.directives','ngMessages'])
+angular.module('plc.services', []);
+angular.module('plc', ['ionic', 'plc.services','plc.controllers', 'plc.directives','ngMessages','ngResource','gm','ui.bootstrap'])
 
         .run(function ($ionicPlatform) {
             $ionicPlatform.ready(function () {
@@ -23,7 +24,7 @@ angular.module('plc', ['ionic', 'plc.controllers', 'plc.directives','ngMessages'
             });
         })
 
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(function ($stateProvider, $urlRouterProvider,$resourceProvider) {
             $stateProvider
 
                     .state('app', {
@@ -108,5 +109,5 @@ angular.module('plc', ['ionic', 'plc.controllers', 'plc.directives','ngMessages'
                         }
                     });
             // if none of the above states are matched, use this as the fallback
-            $urlRouterProvider.otherwise('/app/login');
+            $urlRouterProvider.otherwise('/app/createaccount');
         });

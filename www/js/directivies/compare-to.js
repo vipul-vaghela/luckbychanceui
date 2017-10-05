@@ -7,13 +7,13 @@ var compareTo = function() {
         link: function(scope, element, attributes, ngModel) {
             
             ngModel.$validators.compareTo = function(modelValue) {
-                 console.log("modelValue="+modelValue);
-                 console.log("otherModelValue="+scope.otherModelValue);
+//                 console.log("modelValue="+modelValue);
+//                 console.log("otherModelValue="+scope.otherModelValue);
                 return modelValue == scope.otherModelValue;
             };
  
             scope.$watch("otherModelValue", function() {
-                 console.log("comare..dfdf...");
+//                 console.log("comare..dfdf...");
                 ngModel.$validate();
             });
         }
